@@ -53,11 +53,15 @@ let rec generate lines = function
 let renderLines lines =
     (s=?"svg") ["width" => 600; "height" => 600] (List.map draw_square lines)
 
+let iters = document.getElementById("iterations") :?> HTMLInputElement
+
 let init() =
     let output = document.getElementById("output")
 
-    let depth = 5
+    let depth = (int iters.value)
     let lines = generate [{ left = { x = 275.; y = 500. }; right = { x = 375.; y = 500. } }] depth
     renderLines lines |> renderTo output
+
+iters.addEventListener_input(fun _ -> init(); box())
 
 init()

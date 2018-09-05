@@ -1,7 +1,7 @@
 {
   "private": true,
   "fable": {
-    "entry": "src/fsharp_fable_pythagorus_tree.fsproj"
+    "entry": "src/fsharp_fable_pythagoras_tree.fsproj"
   },
   "scripts": {
     "postinstall": "dotnet restore",
